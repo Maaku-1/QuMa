@@ -1,0 +1,569 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 21, 2024 at 12:40 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `qumadb2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `mi` char(1) DEFAULT NULL,
+  `lname` varchar(50) NOT NULL,
+  `department` varchar(100) DEFAULT NULL,
+  `remember_me_token` varchar(64) DEFAULT NULL,
+  `profile_image` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `admin_id`, `password`, `fname`, `mi`, `lname`, `department`, `remember_me_token`, `profile_image`) VALUES
+(1, 1000000000, '$2y$10$CivMaMPuytbb5KQOJF6TZ.wQdZzLk5qFP3sxtymC4EkvmTj51r48O', 'Mark Tristan', 'L', 'Bermil', 'BSIT', '60566492b59951281c7bfa3aa241c7bf4e364e206a955be9330bdb16c04a3db3', 0xffd8ffdb0043000403030403030404030405040405060a07060606060d090a080a0f0d10100f0d0f0e11131814111217120e0f151c151719191b1b1b10141d1f1d1a1f181a1b1affdb0043010405050605060c07070c1a110f111a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1affc000110800f8014a03012200021101031101ffc4001d000001050101010100000000000000000002010304050607000809ffc4003d100001030303030204040502050403000001000203041121051231064151136107223271148191a1234252b1d11562083392c1f0172443723445e1ffc4001a010002030101000000000000000000000000010203040506ffc40029110003000202020104020300030000000000010203110412213113052241511461324281152371ffda000c03010002110311003f00f9fb58d434bd421abd43d48d8da87dc3479ef60a3eb5a8ebba7f4d50d455d7db47d51a638298bf71dadef63c02b95873de7697120702ead98f9678628ea249256422d1b5ce24347803b2c7f07a5bf435b5b2d60a9a67b986a24dc1b6000efecafb4cf8873e9d555ad86961753544621d9b320016e5606a2f03b7c387372a4d0d5c75b26da86fa72f670e13c9866d6a96d02daf468e8b59acd32a58ea19dd1092e1cc19163ecbb6fc32aa92934b6be29499a57926de3c2e12fd22ae32d919f3ee17690bbf7c36a29a9282885531bfc3676ee4ae2fd5163f83469e34b77b3bff004a5535f4625730348eeb4916a10b86e7bc00b27a055d353523c4ae19fe51d91cf5d0b5e5d170380bc855289d1d494db3a040f64918734e0a2746c3906c56374cd7642fd8e75daaddf5e48b82a1369f927d5a2d4c81879ba035db43b8551f8a2e272958e0fb8272a1dd6f44d2f04e76a527f2a092be52c3e5460db60e513486dc975c78542b7f964948cc625ab92cf7102eaee99aca48dc49b1db7baad8666924dad648c9e4ab9256b1ce0d0db0b04b0dccbdefc9273b44692b0cef7107bf211c4ff5018dc6fb829b4fa059ad6079dee1952aaf428e8297d40e739e45ae3958f1466bc9e4d1da12d19cd3e03048f6b85882b4fa5e2a1ab13a46afbf5792867393965f907c2dd696c2e9db6ecbd670efe494d187910f1bd1a508adcaf37030bc2f90bb473050bc2e96d85ec84c4205e0084a46555eabd4145a3b832a641ea1170c072a15730b74fc139976f5259d9782cfe87d61a7ebd572d2d2bb6d4306ed84f23d96852c792722dcbd8ea2a1ea903d925b26d8456bdd27371dd4c8836b9f292c2c96d8436e50025b18496be115bbd921c707281686ed62908b5ec8ce2e2f740729a01b363cdee90f08f806e82d6ba36200f1e52139b22b5af642e6d826036eee82c5384633ca1b1f6408fc8aa56de520ab760dadeeabe940f531cab2386f2bd21908550375ecb65f0dfe1e3fad06aaf6ca616d24376903ea79e02c7c8495f4b7c04a2669bd233d4bdbfc4ac94bbf2180b99f51e43e3e0753ecbf0c7c97a649d7ba5e0674ee86c8e9db154d2c6d64b61cf9fecad263fe9b1d28a7361b45ec9beacd60d8c71e1d75510d64b59131b21248185e57e4bc909d9d6c78547a371a6ea6e6b1c0b89dcad60d41cfb6ee16574b8659182cc385aca0d2def00bc10171f3a5f835a9992ce96a5db8165eeafa1ac7b9a2e0dd168ba431ecdc184db8c2d7d1e871bc0718ec7ecb0f4b6bd89b466d8f7bbb152a28e436c15ae8f418ec2edb29d0e9304632d097c4fb7b176463e3a798fd2d714fc7a4554aee3605b36c1045c5904b594f08391faa6f0afcb057fa450c3d3aed8438e7ca9b49a34748d201f99c52546b5164099b1b477baab93a8e821bb9b505db393bb92acc4a536e503db5e4d3d3d2362717b8dcf655faecf6a57867208cacccdf1061e21b38289acf53c755a599e269b3080e005ee54a1ebca2510dd7939f57d5490eb4e7c4f2d9637dc58aecbd1d5d1ea74827691bc0b3dbe0ae4eed067d64b2a9a3f08e22f670b923dc7657da03abfa7a7324350d7b48b39a5bf57dd5fc4e4ac169bf46de4e15971e93f28ec831c84a163e9faf60c0aaa691a7cb0ee53ddd67a53402e74d917ff9457a49e6f1e96d5a3835c5ccbfd4d15bb2f002c7caa28bac3489062a4b7ffbb0850f5ceb6a2d3e85f2d148da8988b347007b9563e56153bec8ad71f2b7aeacb2d7b5e8345a67b9ee699436e013c7b95c575ed49fabc8ea99dd773721ae75aff755baaf53d4eb3aa48c926df4d17cd31eee79e07dbd965b53d71cd7ff000cb6c0db60362172aaeb935fd1d4c583e25e099d25af54e8bd67435552f0c67ac185a05aec71b7fdd7d5e2c720e0af8e0305437f120fcec7826fdaddfd97d77a34bf88d1e82526ee929e371ffa42d7c47aaa821cf49a9b44cb24394a424c2e91c8425b19437c9456ca4b79ec8183f742517293807ca006fcaf1b84a72109b5b94080210dafd91939ca6cdcdee7ec81026c41b9e105efdf8465b829b23d90304bae72930880ca4b2047e44514a7d6b5fbab879f92ebbcea5ff0c9441ce9345d56784f66ca03c7f958fd5fe0575369ed77e13d0ae68e3692d27f55bb0fd67839bd5ebffbe09df03911febb397471baa678e18c6e7c8f0c68f726cbee4e88f87c74ee9ed368d8fb16c4dddf73caf983e1efc37d626f883a3d2eb9a74f4d4ac9fd495ee6fcb66e79fbafb869350823d4296868f6817b13dec172beaf9a33546397b44f8f8eb1a6e96998ed6fe0cbf527874552d610738e53343f082a286404964a07b9537e2ef586a5d312c4fd266d86c016917072b2bd21f13faa7a82b7f0d1084902ee242cef0e34baf9d1d3c7833de3f916b46f68fa36aa94dbd0606fb2b7834378735af89d6eea0375bea88beb8e9a4fd4279bd55afc63f89a744fff00eaf591f0f0d7e594a76bf46d34f823a58edb436c3c296fd62081a6eeb5bd9605fd7d5b4b197d669326d1ced20a7fa5fe2169fd57aa49a7d3d339b344ddd207b7850fe0c3f0a87ffb34eb5e11a5a9eb7a0a5b89266823904aa7acf8a14108223943becb0df1428a192b5ae8c163c1dbf29b2c4535006e6d7fbac75c6e94d3a2fc73373b3a7d5fc5074d714c1c7c59544dd5da8d67d376fdcacf535306e2cada9e9f181fa2ad6085fd937a5e847d4d6d55fd599d6ee02f4546e3c971bfbab3a6a274af6b5adb92ba0691d3d4f4300754b5b2ceec8b8e14d4a9f091149b309a6e85355bc08e236ee4f65b2a1d0a3a789b1bed3107b8c02ada7d9030ed6b47616164b44e11e6a2dbdd800761e4a14767aa2cda85b453d646606b8b463ff39594aed40c325b75b71b0375b5ea09e36c01f76eebdb1dd738a71f88ad7caf6821ae2d602793e553c8c693ea8b705ed76a2ce96a5e402e161e4ab36cb1b9b690f6cfdd43669934acdd62ec773641343e9966fda0dec058927f54a38ad4ed8572137a42d586b9e443701cdb1cf65ce3a8b53afd16f45287c92c80fa533c9da5bfe574689c6406e05eff00513c9f0a3ea3a3c1aad24b4b520077f238ff002bbca84a515b6b65f193c699cee9283d2d15cd13064cfbbdf27b9ffbae3ba86a152ed6dd450d5c9286bb21a4f95d13e213b55e99d2dd47a5d2cce9cb5c5d5005d913072ebf727b2c57c3de9396a676d76a65d144e21ee7bee4bc9eebd270d4463acb4fd987355552993a5e9ba6b99a7411c42c5f971b9cafad74588d3e91430bae0c74f1b4ff00d2be78e9f974fafea7d3f4c64ac735b2b7d66b325a06403e3ecbe94611b46dfa4785570b7592e994736bec9916fe520b77c25b82527dd750e5083ee92cbd817ee17bbf28004b7dd21e529e521b76e51b000e0fb21232511b943ca600f23ec87f24b639b212db650206c7ba13ca3cd90118374080b7292c7ca236373dd0587ba407108eae195b78e46bbf34129c1b657cf95fac6b1d3b5b35254cce8aa2176d730957dd37d5bd49aa31eea4a7754b1839b7d5ec1795cbf44cb13da69347a88e7e1a7a7e0eb8d7063c39b60e1dfbabfe8f85b51af472b85dcc61375c7f48eb9acad9df04f432453466cf63c16907ec5759f8635ff8fd46b0be2744e86317dc2dcaab8dc2cd8b912abf64f91971d61a6999bf8cae153a808adb8dc001673a12b8f4a4b53553e995150f78019b23bad37590757f5853c7180f22426df65a5644e82949f4c7a807165d8c99de3a65d3967170e3139df64568f8b144d3ff00bfd1ebe03ce61254c83e2bf4d4a6d2ba680f87c442434553a8d33bf14d8a2dcd21800caa08f418f67e1dd1ed74609de5bc9552faa7ed142e1f1eb7bdaffa6b9dd5fd37ac52c91d35745bad737c1543f06a918fea3d76b6376f6b880d3ed72968740a1998c125346e706e4ed195b6e87d1e1d28d6be063636bec6c1478bf529e5e750a74432c62e360b52db6ccf75ad1cb59a80f4d8e764f0151c1a054bbe985ffa2eb74d4914db9f230124f2a6329626f0c1fa2ea3e12c8fb37ece1ae5385d5239851f4c549ffe2b7dd5ed274ace40dc2cb73144c1c34290c0d18b00535c2c7241f26999cd3ba7c51ccd7c99b765a7669155247f88b5da05ec472a469f4a6aaada059cc6e5c0abcd66b5b4546721ad361754be347dd6fc245ab3d2532bdb3e6df8b3f1275ee93ac6c1d33414134ac617493ea127a4c04027d365fea7585fdb0392a27c2af8a1a8f5b10dea2a28f4cd4194cda87471383992c46fb64193604822c738547f1a7a6357ea8d5218e8a84ea0d3572c9190e386c8d682078b6c1f9156df077e10bbe1de9b3bf5395b36a95afdf3359911b7f9597ef6ee55d97f8bc7e2fdba74c78d66cd97cf846d35a926ae0e74608634feeabf44d31e6a9a6a2fe9818056d24a37c8d6b4b7d389a2e4717f6595d7f5c834795ce9088dad6e09c2e06b76aa8e97a9eb269e49238cc6184343b16fb2a5d569d9524b63788de4723375c79ff11b51f8815fa8699d395c742d2f4c85d36a7ab96ef74718bfcb134e37badc95c719f1775ce93d6e43a075054756680dd8f73352a5104a1a7247ca4804717be795dfff00c6e6cd8b73e3fa396b9318efeef27d4b00751cae8de407016b705dfbe55bc3235ee68ced0337593e90ea7a6eb1d360afa3bbe17805bb859c07769f71c2d8d3c023c123ec0f0bce74a9a6a97a3ace9349a3d5ba252eaf4ee64cddcd22d9c8589acd1ce852fa4c635d083f2dc76f0b7ac9e46bc9bd8db919ba8ba9c4cac83648db916cfbaa29755b965d8efce99ceba4b5186875a8e0a6a18691a2a0c8f31f2f71e5ce2be94d12b9b594cdb1bd8785f2cc5a13f4ceacf569cc9e993b9cc1c0fb7dd7d11d0f50658f6126c02e8f0f2eb3a49fb455cec52f16d1b3f6092dfaa5f2bdd8e17a33cf0383c2400e515ae709337b2400daf7f290b716b22e6e10dec500059090119e50b80ba60038948728858dfba0e6fca42076a0e3908f9280dfca03401be4b728769f28cf04204c47ca3d71a153750d854b40932e6bc60dd746f863d1e3a7347d3e16b6394b63df2ce479ec1721d4b55d4eb3573339ad8629ace631a2e037c2ed9a1eb12d17e0a8a0d8ea4f4417bf75cdd61c5358a1459d8e0637591bf68b5aee9be9fa3ac9f599289b535550f1b881738c05774d5144cd3e5ab8a114cd68b71658ed47a89b415556f16969da012d0782bdd3dafc7d55ba8aae234d4729da1d7b12a11c84e8e865c31f036a7c9807ea22b7aa5f5123b6b1923803e72b5b0d636791ac63dc4773d96e47c26d0b4b824a88da6596c5cd2e793958f7d3cf117319034341b11dd61e562a9f6bd98f0ddd4aecfd128174b0b1f0bb2dfa564faa6aeba29a07441e1af3b5cd68ede55e86ba695be9cce8a28ff942b6d21acac9e59268c48d1f2b49f0b97823ad25fb3556653f7b28f45d42192cc6c8637901a3785d1342d39f4aff0045d23e474b97bfb0f659eaea6a3ddfc2a56b9ec209dad57d4dd411cc21a68af0bdc2db5cdb15bb81c7c7c7a76dedfe0a5e7c5c9a73a2e6063620f8c383b6388364e3ded60bb8ed07b959a66a34d49a93e91f3bdd3ca6f818fd539aa49aa45a74f53451b2b248b2c89c6c1d6f75e8f166ec99c7e471af0796bc334cc200bf644c958f25a2cb9874cfc4f3abccfa3d5694d05483600e47eab6347545d56d6b256bf711616e7f447cb15e2599d4bd1d0b4760869ee4da49383e426f5ba29351a47c6cc06e50d354b1ef652176d90016e7f6b85f2a7fc537c6aea3e94eb3a4e98d15ff0086d31d48d79791ff00e448eb971bdef66dad65663c3fc89700ede3aec77f7b29688fa4c96292a0fd7b1c0d8a619253891cd63b7bee2fdd7e7d7feb66ad4a432a9ac7177d2e638b1c0f9c72bb47c14f8d15dab6bb4ba46aac755475527a6252407c66d7b93dc2a727d23a4ed3d9a639cdf868fa86a6f624970c2c1f54692cd58c71d4c6d923e0923f5fb2e90fa46ba001d25806e01cdcfb9f2a86aa90990dd97cf3c2e266c150ce862cc9a3e746fc1bd5ba79dacd368b530d5e95aac65b514fff002e4efb4e4d8daf6fb2a4e95ff86d95dab32b757aa869e9a323d460661c478173fa15f54bb448eac34b1cd040e08c13f751bfd0a580133bda73f2d86175573f92a7acaffa617830b7b6c8ba074c69da5d1c345a653363a7886d60b67dc9f24abf9b456442d1b762f69adf4ad7e38dcdeead25819550398e7165c737b154ce1549bbf6c7595a7a5e8cd8d3e39016b5cc7118bf0a1565098d961b9df97f65a46d18a667a6d93790392d0a2ccd6b6e1d93efe151938f1d75a2c8cb5bf6606ae840a90edb671f9722eb6fd053b84b2446e2c1536a513410ee4df16f2a5e8f51f81ae89ec233cf85c7e3af87909bfc1d2c8fe5c4d1d347baf77ca163c3d80f917457f2bd76cf3e781f18b24f297806e93846c04ec91d62973943e5080438c7640466e12e7364870728000e0f84279ba239ca13f31b9c592006f607080fd38476bdf37b26f8bdf840036ca445e6c82e988c5d6fc0be9caa7c6fa37d452b6316f4c485cdb7e68a8fe0be99a6308a573e604ff348e5be6d4f041fba75b521c31cac758e2fcb34c55e3ff1662c7c3ad329e391b3696e9bd4fab6bef75573f4469d49346f874fab81919bb76df0ba7475171629d1516b83955bc12d6b65cb93975a7e51ceaa2789f0ba296a678c116cdc10a045a051d482d8b517349fea375d51d1d34e2d342c907bb428b3f4fe99543f89491fdda2c5535c7cb5fefb27fcb9d75727247f45cb03646d2ea11cbb8dfe609ca0d1b52a067a45b0c8dfea69b2e952745e98eff946584ffb5ea154743dc7fecabe467b3c5d657c4cf0fb249ffd2cfe4e1b5d6994306951401e21613311b8b89eea2c1795c1da931903e379d8ef2af1fd21ac417753d6c735b8045953ea5d3dadcb039b3d3990796e55bf26485aac6cd58f2e0d394d79339ac75352c54b5b33216c7252b8b5a6df57d942e91eacaaa8af8a29ee61a807e53821375fa5d5d2d5d33750a294d389373ef19b7e6b4f515da608698c149189c1f95ed0010adc599d56d78d1572713e4bfb5f8445d47a4f4a76a4faff00443253cd8f2aff00a75d145a8421c2cd6e5a3927f255d2cc6537bff953fa76ccd4637db71f2b73994db9472d27ad1b0aed50c1eacb2c2e8dbb7e5797647e43202f88ff00e232a2af51ea17d4b27fc451168bb7d30e31c991b9ae22e2e39b2fb4f5d609698b03be770bd862cbe36f8cac6f4eeab30d5619e532377ec8be771693c918e4ae8f17269f5335c6d6cf99df40dae0cbc26779c6d69dae07d8aeeff00fa165d3b5b8353af7bb746edb691f7da48c0fbae6ba6eafa0d5cae8e17be8a66b89bcf186ee03b13eebbefc2ed59a617c31547cc0fa65f4c18e6b7fdd77776f03cdd753264eb3e4cf33b3e8ea3d46a6a6105b46e0d0016ba676db9cdf1d8a4754bcce19232305c780f26c564e0aa3b5cedd5333c90f21cfb16df9007816e3eea5495eda5f9dc49fe627923d9797e4dcd5783a7865cc9b46c863690f1ce70e4f36aa2780c00587bdedfaacd52eadf8c8b7c60900d8ee1c27ff00d43683bc8247602c42b7e4948afa36cbc97e4702db35be404cbe711b49126ffb0b2a98eae791a7d473c464df822dec9a74d2cced919245f9392a1593f44e63f64d935006ed6920fb7655d2d7bcdf6dedfd5ec9e6d0ec6de4dcf3cd88b2875fbe38dc218dc001c917596dd6bc974245156d5ba4aa0dbee65fbab3a4986e6bad6b701675d1ba4aa006e06f9b0c8fc94da7a9dd520b8b8b381bb92b82dbecd9d44bc1d7f43aaf5e8d97b0205b06ead077eeb2dd29382c7337924f02cb4fc70bd4e0bed8d33899a7adb0bee9122f5ee55e528f5f164857ae0a1ee803d7407be7845c610df06dc2001b908383f7444dc210065000b8d8d81426e01088fe49b3c6500093e12dc24360937269e84448e7f053cc9f69e6dd955892c3928c4b71dd73f66dd16eca9b1c14f0a9b8c2a68e722f9c275b36707b26a83a974da9c6794eb6aac79c2a313d8e0fdd3ad9fca7dc8f52f195245c9e1382a0720aa46549b5af74fc75200e53542e88ba654077b271b3825520a8ce13ed9fbdd4d6468ade22d9c2391a5b231af07c8bdd40a8e9fd2aa9b69a8a1fc9b642da929d6d4dc739562c89fb443a52f4cae93a374b9010c63e31fed72183a4a9e8e46cb4f3480b7807bab76cc538d96fdd3dcb23f7c94d38de1e43039fc00b8afc5ef87b175647f8d92d15641196ee02fbbc05dbabc98247868faf2b33551fa92383c1b1bdc5f9552c8e2b68bd4f647c15a87c37ae92adcc752b26b388717006c471949a4f4af51747ca2bf4612d1cad24b9adb3986c7b8eebec2d47a134f9aaa4aa0c2cdf87b5a704a8c3a5e96281f0b76b99db766cb5bfa8bd69ad90fe3afc1c1a8fadbe22ea1a6c3f878e9e865634b2499d4a1ce94f67786f8b297a1e81d5faed5306b9add592483b61708d840c1c8e31d8f85d9d9a0d086461c37358301985610c5474647a5158f938589f2bcbe92917ac4b5e589a5e9efd3e9210e91d26d60612e75c9f72558c1136624cc765b81e545fc53643b4dda3b27226bdc6f1b7736fe32b3aadbd966b48b2fa81683b183824e47e49da731419c975f3ee829a2325ae1a6dc8bf296a9ac8b863adfcb637b2d1f8d94afd0ec95c6c4b9fb40c79543ab6a27d37ba291adbe375b27f2455956e1ba30df97b9b73f9aced5d4ba594ed7804702d7c2e5f273b4ba9b70e2dbd8c19dd197dc88c8e0822e7ee53f4554d2e66d7fcde4e1555755c601036fa9c6e69b7ec874c6bdd2efb879bdf85c94f6f674ba6a4ea7d2b5ef1308da7683d8ade8e01bf2b9274eccf354d91987b4e3770bb35316ba0617069240e17a0e065dc34ce372e74f688bd9276f753fe4ecd07f249661e5a07e4ba5dd1836c839f1c213c29d667f4849b1993b425dd079201f7ec86f6054ff4e3cfca1216c63f91a9f740571e2c10f3ecac088edf4029b2c8c7f284bba1e9904e02170530b63b7d20a02c67f4a7dd0fab219b8bdd07e4a6398cb1c7ee87633fa52ee814b32a1f61ec89aff7514cb6c220fc587758366c24b64ce53a2450c3c8e4a26bec819343b08c4840e5426c973ca783c26844a6c98f09c64a7850dafca36bbca009ec9afec9e6cf739fc95736400611b25cdaf746c0b36ca43ae138d96ee2557364b0e6e9e6c82ca40593273e70a4326b66eaa1b22911ca6c403752ecc8394c8badd53b735ec24169fd55419848e17fdd58d7fce4e316543551399f412b25d54d6cbe6539d0dcee73775b9254495d19049680ef7089f5803b6cb836e7b26262d38bf3c155f7f3b1a92160b5cc366bc7047194c96dda4387cc391d93d286efb38d85b9fcd45df691d738758353ee1d47e08dae90307f36434e42bfa68591c778dc36db2d75f1f9acb367631d76b85c1245fb279bac38cee0d3bf0385646553ec854b7e8d0cf23369b7f0c1f279fcd407cb208dce1b9b1dbee986fa950e1ebb6f1b813f5585bdd1495118708a26879e304dadf756bbec88cca44399d1ba2203b6b9dc37825673522f803be6635c47201247e8b515526fbb46c37161b467f55415340e964b367bbc9b6d26cb8f9d36fc1d1c2d2f665e1a6965945c875ce038656968e824843410d6b88fa472a7506833c24c8e6091d7c176003f657f069ee61bc80079e4edb28c60ab5e4b327210c69348612d26e3cdbcfb2eada6b88a28c3af7b66fcac251444d4b1a400dec39256f201b216b6fd97578d8fe3d9cccf5df44adfdd0975d345e6c9377395b4c890e078ee94bee066c982e00a12fe7c207a1d321c8405c6d94defef7e107a99bf28d00e97edbf643bafc94db9f9b202f3e6e980e97e106ebf29b0eb037280bb0794c0327b049faa6b7dbba1de11a118ddc6fca703f9b288d92fc9ca212dae162359283ce7384a1fcfb28ad9466ebdeaf846c344d6cbe138d9336505b2e11897846c344e6c89c13282d9308fd4f752d8134497e11b1c46472a1b5f64e3240d27ba3604e1262c53cc9acab992e53a25232149112c44b73d93d14bf38b1eeab1b2e2e4a7993863c3b9b14ff005b54c1bf36b0547571f21a0123b1c2d1995b2421ce0012151d590e2e3652732d6cad36999aad8dae1678dae3c2cc54c7510beec94ecbe16b2b8f2064fdeca9261b5fe9b8937f36583242354514b3495538f90b9db7b28cc3565b67176d677daad2583f8f78f01bf57e6a652d2cad6fcb63622f7c63dd42236f44aab48834ba74b51620804db916fd55d53e8f153b4c8fbf3bafc5d49a7827886d019e93870f394e6e8a4367bc00dc5b77fe05ba71cc995d36478bd199ce7b5a5ed6fcbce0fb275ac91f774766341b80004e08607e2375ed6b96e4fec920fc5b2473648daf881f90b70437dc26e7609e88f251fe25b6b3aee3c03652a8740a6a721ed8a3f5b8dd724fdf2ac29c897e8b13ecde13ef7860f4e2d8d27920dca2712d790791911b46d0e3ba522ded74463633e990827bdb254a8e66b9a58071c9213734d4edc47e96ff24dcab3aa52476db2347398aaa27922c1d6b1eeb6cc9439809c5fb2e715d52048c0241bb70cdbdd6e609498d99bfca3255182bb55245b956a532717fba1f52ea317dc5bb70bdea0039fd16cd19f648320b149ea585ca8dbc763f64dba6cdaf840892f96f8bfdd0ef3eea335f924a2dc6c9a403bbcdb1dd0170f74defe6c507a983c940b63c5fe09fba12e3d9325fce4fba12eb8bdf840870bfc9ca1dc5345d8caf6f3ff008100629aeb25dfca6b778ba53c5eeb9bb66e1c0eb82128278299b9031ca2bd85d2d8c7c3adca73781f751038f95e6bc926e53ec1a26fabc651b65005d41f5022f57b27b0d13fd7ba36cd8e6cabdb266d7e11896e084f61a27897bdd3827c5d418e473ced68bf61656349a6c92bef302c60fd4a1da95b60a1d3f01c4e74986b6f756f45a63aa0ee7bacd6f6f28e8691b339ac8d98e02d0414a2002316b9f6544bbe43fe8b6ba605fd953246638fdbeea9ea24dd7eeaf6bc1048160166eb1ce0481f285adaf8d68cb2fb3d902aa463460007cdd51576ea87b184bac4fd56042b876d0e3b8f3e540aadbea0bb6e4e07b2a1d76458968ae9e0744dbc3f35b045ef753285a1cd6facc3bbfac9b068f7f7450c6449b458ff0050f29d3196fcbb8b8b8d832fc7be1598e7f24698f3e47c2c218d91ec192414b191b497ed6341c3c8164b087860d9778183bb174e5c6f689e22e20dac3e91f7f2b414890c9151bcc4f95ee93b5f02c7be02b1640c7c6e89954f0e70b388b039f0556ffaa4711747344f19da7e5191edecac69f6cad6c91102fc58df0a53a131ba3d3a0a27fa74d2cb30183ea1b957218c8a3bb23b1ee2ea2b68e373779b35dfd4020dce67326e03fa7055be2510f648351131bf307055b59511b5a4b4b083dbbaf56d7fa519f4f27c3bfcacd6a1a993b98e0d17f0573b91c8994d1b30e16dec62b6abd49c3473b8000fdd745a59af4f183e00257217bcbaae2730603c5cf3dd74cd3e50610383ce566fa756eab65fcb9d422e0cbd81b842e9858d944f58b47284c97f0bb7a397b25fa87373d936f96cdc5eea3197dd099017819364089a1fb5bcfe497d524763f6515cf16e40b775e12200905d6f3f64864f3c28e6406f749eadf9c8f64c07f7826c737ee80cbff964d17f3dae8378e2d94807bd4bf02ddb95edcff23f54c17f36ecbdea5b1642031fea223261446cc2f9b7ba4350077c2e3763a29128482f6f288bef8005944130cdcfe6bc25008f7ee9761e89a24164224172a27ae7ee127ae0824a3b0689465b5c5ef65e12f3dd4074ff006422a4016251d87a2c3d670e0a5fc40baa9355f567f74dfe336f7ca1531e8e8dd3b14429dd2c8373bf955919779f9717c0b2c2e89ad5a2742f3b7b8375b3d018350a969692e60eeaa75ded422f94a61d3355a45188a1323cd895299307fa845b1809bd42714b4d66918160a963d419134b6471b9e482babf6e06a0e5a559b76c3d41e0875cfe8b3558e06e2d756957571b9ae20dfeea8e7712e758dfd94325264e27454d4121c4b6c2d9e131f34926e0e208c632a55458dec2f7c2857d9bac3e6f04f3fe16069a6685e5131a46d3f2827cdd3b4ce75c890ee73b800701418c168697386316b63f54e4152f6bcb770601c32d90b5c5a452d166c2f0c0e73761f3dedec13ed2d311b12d0e3dce4dd578aa2edce73f7106deff00f9f64e7ac26fe23be91f48b7eeb4ab453d49aca78a47d9cd6dda3eabf0a20a6ff4e958617ff05c6c4761729a331836068321793b8f84fc556c316d06ec70cee07293b4c6a5964da80d187387b1ca6e6a9120f9fe43e436c5448646ee2c6bdce1d83b2a646e2cc485ae61ec5476e87e1105f0c85e43c6e8ddc121657a8295f4ef2e68e7b2df7a0c2c3b2ec1fd36b859fea585a69773c65a706f658f938358db3560cbf7a462281ce13c71e5db9c31e1746a09af10b9b10385cee94df50005ded8c70395b2a19ff80d20e155f4e5f7b2ee6bfb4bdf56edbe00f290c84379e7caae1501b7b1cf74bf89dc46d270bbcce3a27b65cf7e12365bca48e0287ea7ca4971431c82e48b0fcd202cfd526f9ba42f7007dfdd42135afd97bd726d9cfba009bbff0064825b7bfd942337f4e45bb94bea11f36020098e92e0dbee72877dc6393e4a88d92f7b9fd1117f363f9d90049f52e79c8f0903f1fcbfa28a1f606e6e6cbdf8923173fa94d08c08aa2473848da9ce0aa11ab424583c275ba830f0e0579fe9475517a2a01ee884f716baa58eb0109c152cbf2a3a632d4cf61ca6dd538b5d56beb1a3ba6ff141dc14bad0d1626a6c2d74c3eaef818505d35ef7298325cf20a7d5e89caecf44e33b9df2b73f656ba669a66787d47d3e2ea8e9aa3d375ecd3eead62d5760bb49c760165c99697848dd3c75adb3654f4f4b0c25b1b1bc72b5bd165b4f1480bae6f6c9e02e44cd78875acec9c5b2baaf4fb994f4a03413760249ee569e0eeb2ed997973d31ebf65d6af57ea10d16dbcf959da9a87c77747befec2e159cf799cd17b13cdb84634d63a124edddf6c2bb353bc8da29c72a212666ceab6ddf890d8ddfdc263f1d1ca5ce89e08edeeac750d1db231c1ec6dc646dc2cf9e9d7994c904c627b781d950b25a7aa1b897e50fcd2ddbf238024f9b5d46948b5dc723ba0fc3d7d3b88a88411fd4d176fdee95d239e1db6c001f32d8b548ccfed638ebcad196bda7dd32e6073f690eb0c5dd8b1fba56073da00f96df4909765de7d473afc1b1c2b1495ecf31c4bdc06c6b80c38026c9ede5af6820ed03c72537092c63807937c9f29620f6ed01e4802d836b7e693a99ff0026394ebd21d60f59d236a2f8b59d623f428f7189e03cbb6e034eecdd26d758bbe616cdc12e27fc26e4959b5a5b639fe619fbfb23b4b5e18f4d7b2d209c06921e45f17c5cfe6a53035d9b807c9b9fdd544333658da0ff00108383c29f154b59b44d716fa5a392af8a441cb2d29a461b873ade083c2a4ea7735b4a5b7b8391eea53f5321c43299c3c38b87f6545ae48eada67b184b71dbb150e4e44f1b48b78f8abbecc6d33cc6f7497cb8ad3d25491101bb81d951c1a4b8bb73ee0fb2b3874c95b985d7fbaaf851f14ed9a3951791f82d45402393f645ebec2322c7f350990cb7daff0097cdc729c21f103bd9616e470ba3dd339cf152fc12ccd7e4d884b14b8363f75004adf38cf74b1d472377ec97621a2cdb28b5fbf64a251df1650c4971f35c7e5928b7df03ca96c5a257a97f078e51fa83836e141f571937cf64bea803ba150689a1e0f045efe57bd5da0dc927c289ea0be739ee3251092d806f8e5098b44af56c79e4a6cd464f099de2e4820fcc843cd86023622147f033a7186ed92bc0f1f892ad697e1274d538f9a9e792dddd3b8adf3401cff647b4106d649a4fd9354d7e4c9c1f0efa6e2b6dd3f75bfa9ee2a49e82e9e93ffd5c40f904ff0095a3b5873fb256dbc5943aafd0f6ff00673bd6fe0de9d5ec73f49aba9d2e6edb5dea32feed2b1b51f067a9e071fc36b149347ef0b81feebbc5bfdc7ec96cfcd8dd1d67f43554bf27cf6ff865d50c040afa473bbde3705164f86fd65134ba2769f37b17b9a7fb2fa30b0bbeab1fc9088c0fbfd92eb1fa26b257ecf99dbd35d5b4ceb56d0461a3f9a39377fd924eeaca3b0a8a79c38e0fc86c17d32608cdeed1fa20751c2f07746c23ddab35f166decd98b9b50b4d6ce6ff000cba125d49add57588cc54eecc0c772eff0071f0b73aa3a1a3a9f429802058137c0cab7a773e97d4309fa981ad07868f60a899a0d43fd77d4d409a49250f2eda410d1fcaadc78a30c353eccd933566becc934b1971738836be479531ad111b1ce7ce5144cd8c0001645e917e7e502dcdd6151a343b18ab82ec706ed048b8ef659ca989ed73891604f0b4af2d0ddad6dc918be6ea8b51946e200dcebdb6b7855e48278e8ab15cd80ed7385ca6ea5d0d531c248c1771b9a32148a5a16cf339fb72d19bf957743d30ed4f739e7d0841c62e5cb3462cb4f505b5931cadd18a86396394451c6f943cfcb66927dafe15d5374dd436432553c3496ed0c03202e8341a251e9ac2c8c173ce4b9c725248f88c9b636c78c7d3c2eabc599634a9f939cb26376faaf0621fa43216111346ef755f2d08ff00e7b023b11cf8b15b5ae8a27077e1decf51a3238bac74f24b512c8c68b069fa9d8bae665c0e5fdde4e8e2ca9af05154c92e9afbc6fbb0f3bb202f32b193b2ef6d837eab62dfe549ae8a4f4cb770ddfcb8be542a57090b99281bda6c46d2a852e5f864f6a97925b846e8ef0cae68fd92b6a8460925ae2a447451bda1a038b39b1c2acd574e7d344e9697e6681f4df23fcad98eae7cb0c7f137a63b26a17e480987d4364611b802b1d53aac8d7117b594076b8f69cb8ad9fe48ed63e3a48ddc550d61b3c8b2b1a7a98c641b85cd99ab3dc37025df656543ad10eb1715354d12f864e9513a1a96d880539f850cfa6ce6f82b2d43a9b1f62d758fb15a2a4d41b20b38dd5d34a8cd78521aa8d2a19aee887a4ffd8aa69e927a471f523bb6f8734e16afe570bb4dd34f607020f74da39f938b17fd1931311f5037f374f31e300d8fd95c4ba7c4ebdda08fecab6ab4b96261753ff1583b0e42afee9460c9c6a8fec6849ee7b1174a4f38c7dd416485bb85aff74f0985cf20df93951593666ea4a0eb5b1dff00244d3718b28e2606d91db36441e2c38b807b29aa23a24076707f99783c5b9299df7c5f3718402416cbff0070ac5688e8eac1df922173c14cb7d8a71bb8782add900c5fca5b91dd08be4fea880b1f7480204908984f74245b818fba31ee9a0d86320a211f9ca10076fd110796fba61b17d31e2cbc182fe52ee06e903b16052d212d9e308eed5e937080b621f37ded746d7917be510783c8c146931a654bea9f01b4b03da3c9171fb2174e1b7736ecbf7db8574337e10b98d91b677cdec555f1227dca5336f6ddc73dcdb2a2543a9a36005acf50e3c9fd55d4ba76e20c321658dcb48b827dd66b5bd37510f6be2858f8da7739d1bb37fb2aaf134bc16464f3e49d4b1c71c0e73c80d69e4f392b54278e0a778dc226c3187117e02c27ac1a2ee25db1c1e05f048e2eb3b3f5a54543e57d5c22269203e1f505dc01e2feeace3fdb1bd11ca953d6ce95356fab44258ea07a8e37706bae40ec3f4595d6bab29f48617d5bc35ed1f2b8f7be32b94567c4c8341ea99dd5f3fa3433c6d8c3187711213c5bd87f756b552e9fd554e668276545307349707e058df2b454d3855a2b4a556b67427ea94d59a6c6e8e70e738ed710321dcdbd957493b9b68f75ac2f71dd725e8feb77b7ab356d36a69af4b34d24d0ccdb82c3e1c0e08b016216fa5a5d66be16d5d153efa77e5843f207b8ecb3e7c7d7ca5b2ec55f81daf95beb12db16db19b10a2d2b995179247398f6b4003cfbaa286b1f355ba0aa2eb8759e0f23cabea88d946586321cd7b09c78f2b86a69b74d783a0e96b45ac12589bbae09e11ba4710460b476e6deea251cd1960be6fdcf84ecaed8d22e0826de16a4bed29df9333af74ec752e3341b58e39201eeb20ed22ee7020b88edc2e9150ef4e33bf206466ffb2cf54cc04c0b185f238df038fb955cddaad23a58f9758e5a6cc59d2b57a724c7a7cb237fd8414a6a27a717ada0ab82ddcc0e3fb85d634c9ef1813c0d71f3c2bd84d2bdbf331cc5d99c78e97939d93ea195bda38952ebf4cc780da96c6ebf0ff97fbad5e9baceeda1eec9ee0e17429b43d36b01f5a28661fef89aefee15057f4850004d0b1903bfd82c3f451ac29799669e3fd4aabedca87a8ebf73466eaca39b78cac953d34f43298e5271c1f2af29e636ca84d7e19bea97b45aee080d864265b20f28b75d4f450e88957a7c55377802397fa877fbaa19e09699fb656dad6b11c15a828248db230b5ed0e69ec55171b335e257e519706c3ca3dd6b926f6c053aab4a22eea738fe93d9573a37b1df302a9d3461a8a9f682f54b412092709b24dce073e12389da40f708da64b04d365675f0467088709a691dbba36b805d2328761d92b5dca40e69e6ebdf28276a40380d81b236b881e7f24c5c13c591b5a4706e8d80f8cf08c1f74cb5d8b256bf39400f0cdf20220c1ca681b5d182e4c032067b25173c65361d6f74e5f17013017ee903b3c22dd85e1f35c2001dd7b8c84c4cc7589173e6ea51680305064dfe6ba10bd995d4f4ca57324225752bdc33b320fe4b9feb5d36c9fd41039c4b85c3db80eb763e175eaba086ad85b2c609f36cace54f4cb8ef10487ec5aa6948b6d1f3175674b452d546f76e3330d8971efe6fe541a4d5e1e9ff00c76980cccab9da1c5c73b81c1737b61747f8a7f083aa3aa693d3d1750a4a46827d46b8b819478de385ca75be88f887454142ed43a57f1d51a7c46212e9f309bd568382737ecaf88ed3aec4fe45f94746f86fd0b140e9759d42474f6172647f0dff000bb6e83ab5239d1c441104ad36206011ff00f17c8a3e2d752e9b4add26b34b7e94c782c95b594b247f2f737b5ae07bae9b43f177428749829a96b9924d4d6717b1ff0058e31eff00e5472e2b969eb6115149ecd67c40a4ff0049d7eaeb74eb4a22731d3c4c19daec0781dc7955549af89834bc3f6347cb761cfb2d1e855d4fd59550ea4e8df03a46060f9496387f4dd6d5ba7860b376ff00d2b995895b66aefa4b473aa1d5e1d80b2405a791ecade9eac4cc21ac73da46704ad7fe05c2e7631c7dda103de62c39bb556b029fc89e46ff00061eae4748c7b237bb8c02323f355da08a9358f8dd13a5683f59ecba04afa4909fc4c4c71f2f65ff0075e81942c05b4e2260bf0db04a30a9adec7591d4eb4478620d68f945eca406776e13ae631a2edc8fba8efa86b6e2f62b776299c6e8911c85a0b5c2e13733410485064ab0def74dfe3c1c1284cdd8f0686a789d2bb681703f65e8e12cc14eb6b23c8ba43331ddc150726e5e1681e3ee95921eebd719cdc2f06b484b41a1f63ee11dc15187ca8c3d474453d0e9098969992dee05fca31224f50051689786574b4459902ea3fa7fed2ad5d35ae98f5c7b7e8a3d515bc526f03adcf09c0e23f35e5e5a4e104c72206f75e5e40040fba50769c1b2f2f2002df7bdf94ad77e6bcbc801cb83cf2881b5f2bcbc9a0177e6d7441d8f94af2f213014499f2943eddff65e5e4200bd539ce5783ae2fcfe4bcbc92602dfe5be0f8439eebcbca4fd0025a0e080530fd3e9e4b92c6dd79790bc810e7d022a86164cc8a78cff0024adde0fe46eb2f55f0afa5ea6574d2f4fe9fea937df1c21a6fe71dd79794bca5e00b8a0d0e1d2699b4f47118e1670df0a56cd9cdecbcbca0d1342b46f366a534a641f300ef65e5e4207e06ce9d4ce07d68b6fb850a6d0a037741e9bfd9c2c7f55e5e53e9241532a6b616d2b4831be270efc8599afd4bd1bddfb8795e5e59f27dbe8e9717cfb2b5dabe3eaba8cfd6067e6b2f2f2a36cea69261b3570eef95222d50f9fcd79794d36268991ea408e54a65734e6ebcbcad456871b5a1ddd78d58f2bcbca2c401ad68ee9b35cd17caf2f2adb0432fae6db94cfe37fdcbcbca1b6347fffd9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `answers`
+--
+
+CREATE TABLE `answers` (
+  `id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `answer_text` text NOT NULL,
+  `is_correct` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `answers`
+--
+
+INSERT INTO `answers` (`id`, `question_id`, `answer_text`, `is_correct`) VALUES
+(126, 57, 'Mercury', 0),
+(127, 57, 'Venus', 0),
+(128, 57, 'Earth', 0),
+(129, 57, 'Mars', 0),
+(130, 57, 'Jupiter', 0),
+(131, 58, 'False', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `choices`
+--
+
+CREATE TABLE `choices` (
+  `id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `choice_text` varchar(255) NOT NULL,
+  `is_correct` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `choices`
+--
+
+INSERT INTO `choices` (`id`, `question_id`, `choice_text`, `is_correct`) VALUES
+(178, 55, 'Berlin', 0),
+(179, 55, 'Madrid', 0),
+(180, 55, 'Paris', 1),
+(181, 55, 'Rome', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `deleted_accounts`
+--
+
+CREATE TABLE `deleted_accounts` (
+  `id` int(11) NOT NULL,
+  `account_type` enum('admin','student') NOT NULL,
+  `account_id` int(11) NOT NULL,
+  `fname` varchar(50) DEFAULT NULL,
+  `lname` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `deleted_at` datetime NOT NULL,
+  `restored_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `identification_answers`
+--
+
+CREATE TABLE `identification_answers` (
+  `id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `answer_text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `identification_answers`
+--
+
+INSERT INTO `identification_answers` (`id`, `question_id`, `answer_text`) VALUES
+(32, 56, 'Au'),
+(34, 60, 'car');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questions`
+--
+
+CREATE TABLE `questions` (
+  `id` int(11) NOT NULL,
+  `quiz_id` int(11) NOT NULL,
+  `question_text` text NOT NULL,
+  `question_type` enum('multiple_choice','identification','enumeration','true_false') NOT NULL,
+  `points` int(11) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`id`, `quiz_id`, `question_text`, `question_type`, `points`) VALUES
+(55, 12, 'What is the capital of France?', 'multiple_choice', 2),
+(56, 12, 'What is the chemical symbol for Gold?', 'identification', 2),
+(57, 12, 'List the first five planets in our solar system.', 'enumeration', 5),
+(58, 12, 'The Earth is the third planet from the Sun.', 'true_false', 1),
+(60, 13, 'What is Audi', 'identification', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quizzes`
+--
+
+CREATE TABLE `quizzes` (
+  `id` int(11) NOT NULL,
+  `subject_id` int(11) NOT NULL,
+  `quiz_name` varchar(255) NOT NULL,
+  `start_time` datetime NOT NULL,
+  `end_time` datetime NOT NULL,
+  `time_limit` int(11) NOT NULL,
+  `allow_answer_view` tinyint(1) DEFAULT 0,
+  `allow_see_upcoming` tinyint(1) DEFAULT 1,
+  `is_draft` tinyint(1) DEFAULT 0,
+  `randomize_questions` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `quizzes`
+--
+
+INSERT INTO `quizzes` (`id`, `subject_id`, `quiz_name`, `start_time`, `end_time`, `time_limit`, `allow_answer_view`, `allow_see_upcoming`, `is_draft`, `randomize_questions`) VALUES
+(12, 5, 'QUIZer', '2024-11-21 11:07:00', '2024-11-23 22:07:00', 120, 1, 1, 1, 1),
+(13, 5, 'Math Quiz 1', '2024-10-30 14:06:00', '2024-10-31 14:06:00', 2, 0, 0, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quiz_results`
+--
+
+CREATE TABLE `quiz_results` (
+  `id` int(11) NOT NULL,
+  `quiz_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `score` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `quiz_results`
+--
+
+INSERT INTO `quiz_results` (`id`, `quiz_id`, `student_id`, `score`) VALUES
+(26, 12, 2021310140, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `mi` char(1) DEFAULT NULL,
+  `lname` varchar(50) NOT NULL,
+  `section` varchar(10) DEFAULT NULL,
+  `year` int(11) DEFAULT NULL,
+  `gender` enum('Male','Female','Other') DEFAULT NULL,
+  `department` varchar(100) DEFAULT NULL,
+  `remember_me_token` varchar(64) DEFAULT NULL,
+  `profile_image` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`id`, `student_id`, `password`, `fname`, `mi`, `lname`, `section`, `year`, `gender`, `department`, `remember_me_token`, `profile_image`) VALUES
+(1, 2021310140, '$2y$10$XmSItOXl2YE5ea7WU11RzOs0jhPOiAD2dDJzfWFq/tBlDUr2rMAO6', 'Mark Tristan', 'L', 'Bermil', 'B', 4, 'Male', 'BSIT', NULL, NULL),
+(49, 2021310170, '$2y$10$s11JWvF7z3Qrg31lzES7weoPC3fOupAGJpqzcLiYBWbdiscbYSjJG', 'Jhonrich', 'S', 'Calma', 'B', 4, 'Male', 'BSIT', NULL, NULL),
+(50, 2021311679, '$2y$10$cZwejNVQofpIaYykH9jjBOAAOXdTorY4fiFSOZ9NtqiM.wCIgF2fC', 'Jojo Jr.', 'Z', 'De Mesa', 'B', 4, 'Male', 'BSIT', NULL, NULL),
+(51, 2021311683, '$2y$10$korRPnVg/jAm4Pwt77BgTOQM2nNSJ2FvjS/3BJwPBs4Q0aSIC7xta', 'Rhansel', 'R', 'Baldres', 'B', 4, 'Male', 'BSIT', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_answers`
+--
+
+CREATE TABLE `student_answers` (
+  `id` int(11) NOT NULL,
+  `quiz_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `answer_text` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student_answers`
+--
+
+INSERT INTO `student_answers` (`id`, `quiz_id`, `student_id`, `question_id`, `answer_text`) VALUES
+(142, 12, 2021310140, 57, 'Mercury, Earth, Venus, Mars, Jupiter'),
+(143, 12, 2021310140, 58, 'True'),
+(144, 12, 2021310140, 55, 'Paris'),
+(145, 12, 2021310140, 56, 'Au');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_subjects`
+--
+
+CREATE TABLE `student_subjects` (
+  `student_id` int(11) NOT NULL,
+  `subject_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student_subjects`
+--
+
+INSERT INTO `student_subjects` (`student_id`, `subject_id`) VALUES
+(2021310140, 5),
+(2021310140, 6),
+(2021310170, 5),
+(2021311679, 5),
+(2021311683, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subjects`
+--
+
+CREATE TABLE `subjects` (
+  `id` int(11) NOT NULL,
+  `subject_name` varchar(255) NOT NULL,
+  `code` varchar(50) DEFAULT NULL,
+  `department` varchar(255) DEFAULT NULL,
+  `year` int(10) NOT NULL,
+  `section` varchar(5) NOT NULL,
+  `admin_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subjects`
+--
+
+INSERT INTO `subjects` (`id`, `subject_name`, `code`, `department`, `year`, `section`, `admin_id`) VALUES
+(5, 'Test sub', 'S67Y8JORFBK5', 'BSIT', 4, 'B', 1000000000),
+(6, 'Math', 'D3346C', 'BSIT', 4, 'B', 1000000000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `superadmin`
+--
+
+CREATE TABLE `superadmin` (
+  `id` int(11) NOT NULL,
+  `superadmin_id` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_me_token` varchar(64) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `superadmin`
+--
+
+INSERT INTO `superadmin` (`id`, `superadmin_id`, `password`, `remember_me_token`) VALUES
+(1, 1, '$2y$10$1UNhGJ5AbUGeNQJnFewz2eUh/wBNf6Q9ic4HE9eg4tuAfl/4R.GNS', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `admin_id` (`admin_id`);
+
+--
+-- Indexes for table `answers`
+--
+ALTER TABLE `answers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `answers_ibfk_1` (`question_id`);
+
+--
+-- Indexes for table `choices`
+--
+ALTER TABLE `choices`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_choices_question` (`question_id`);
+
+--
+-- Indexes for table `deleted_accounts`
+--
+ALTER TABLE `deleted_accounts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `identification_answers`
+--
+ALTER TABLE `identification_answers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_identification_answers_question` (`question_id`);
+
+--
+-- Indexes for table `questions`
+--
+ALTER TABLE `questions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_quiz_id` (`quiz_id`);
+
+--
+-- Indexes for table `quizzes`
+--
+ALTER TABLE `quizzes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_quizzes_subject` (`subject_id`);
+
+--
+-- Indexes for table `quiz_results`
+--
+ALTER TABLE `quiz_results`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_quiz_result` (`quiz_id`),
+  ADD KEY `quiz_results_ibfk_2` (`student_id`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `student_id` (`student_id`),
+  ADD UNIQUE KEY `student_id_2` (`student_id`);
+
+--
+-- Indexes for table `student_answers`
+--
+ALTER TABLE `student_answers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `quiz_id` (`quiz_id`),
+  ADD KEY `student_answers_ibfk_2` (`student_id`),
+  ADD KEY `student_answers_ibfk_3` (`question_id`);
+
+--
+-- Indexes for table `student_subjects`
+--
+ALTER TABLE `student_subjects`
+  ADD PRIMARY KEY (`student_id`,`subject_id`),
+  ADD KEY `subject_id` (`subject_id`);
+
+--
+-- Indexes for table `subjects`
+--
+ALTER TABLE `subjects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `superadmin`
+--
+ALTER TABLE `superadmin`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `superadmin_id` (`superadmin_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `answers`
+--
+ALTER TABLE `answers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+
+--
+-- AUTO_INCREMENT for table `choices`
+--
+ALTER TABLE `choices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
+
+--
+-- AUTO_INCREMENT for table `deleted_accounts`
+--
+ALTER TABLE `deleted_accounts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `identification_answers`
+--
+ALTER TABLE `identification_answers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
+-- AUTO_INCREMENT for table `quizzes`
+--
+ALTER TABLE `quizzes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `quiz_results`
+--
+ALTER TABLE `quiz_results`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
+--
+-- AUTO_INCREMENT for table `student_answers`
+--
+ALTER TABLE `student_answers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+
+--
+-- AUTO_INCREMENT for table `subjects`
+--
+ALTER TABLE `subjects`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `superadmin`
+--
+ALTER TABLE `superadmin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `answers`
+--
+ALTER TABLE `answers`
+  ADD CONSTRAINT `answers_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_answers_question` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_question` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `choices`
+--
+ALTER TABLE `choices`
+  ADD CONSTRAINT `choices_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_choices_question` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `identification_answers`
+--
+ALTER TABLE `identification_answers`
+  ADD CONSTRAINT `fk_identification_answers_question` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `identification_answers_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `questions`
+--
+ALTER TABLE `questions`
+  ADD CONSTRAINT `fk_questions_quiz` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_quiz` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_quiz_id` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`id`);
+
+--
+-- Constraints for table `quizzes`
+--
+ALTER TABLE `quizzes`
+  ADD CONSTRAINT `fk_quizzes_subject` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `quizzes_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `quiz_results`
+--
+ALTER TABLE `quiz_results`
+  ADD CONSTRAINT `fk_quiz_result` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `quiz_results_ibfk_1` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`id`),
+  ADD CONSTRAINT `quiz_results_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`);
+
+--
+-- Constraints for table `student_answers`
+--
+ALTER TABLE `student_answers`
+  ADD CONSTRAINT `student_answers_ibfk_1` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`id`),
+  ADD CONSTRAINT `student_answers_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`),
+  ADD CONSTRAINT `student_answers_ibfk_3` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `student_subjects`
+--
+ALTER TABLE `student_subjects`
+  ADD CONSTRAINT `student_subjects_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `student_subjects_ibfk_2` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
