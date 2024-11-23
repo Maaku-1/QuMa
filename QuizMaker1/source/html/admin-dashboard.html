@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/source/css/bsf-admin-dashboard.css">
+    <link rel="stylesheet" href="/source/css/admin-dashboard.css">
+    <link rel="stylesheet" href="/source/css/fonts.css">
+    <link rel="icon" type="image/x-icon" href="/assets/pictures/QM Logo.png">
+    <title>QuMa</title>
+</head>
+<body>
+    <div class="admin-dashboard-wrapper" id="admin-dashboard">
+        <div class="admin-dashboard-content">
+
+            <!-- Sidebar -->
+            <div class="sidebar-wrapper" id="sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-profile-wrapper">
+                        <div class="sidebar-profile-picture-wrapper">
+                            <div class="sidebar-profile-picture-image-wrapper">
+                                <img src="" alt="profile-picture" class="sidebar-profile-picture-user-image" id="profile-picture" >
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-profile-picture-placeholder" viewBox="0 -960 960 960">
+                                    <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="sidebar-profile-details">
+                            <span class="sidebar-profile-name font-rubik-medium" id="name"></span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-divider">
+                        <hr>
+                    </div>
+
+                    <div class="nav nav-pills" id="sidebar-tabs" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active font-rubik-medium" id="sidebar-subjects" data-bs-toggle="pill" data-bs-target="#main-subjects" type="button" role="tab" aria-controls="sidebar-subjects" aria-selected="true">Subjects</button>
+                        <button class="nav-link font-rubik-medium" id="sidebar-profile" data-bs-toggle="pill" data-bs-target="#main-profile" type="button" role="tab" aria-controls="sidebar-profile" aria-selected="false">Profile</button>
+                        <button type="button" class="btn sidebar-settings-btn" data-bs-toggle="modal" data-bs-target="#settings-modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-tabs-footer-icon" viewBox="0 -960 960 960">
+                                <path d="M433-80q-27 0-46.5-18T363-142l-9-66q-13-5-24.5-12T307-235l-62 26q-25 11-50 2t-39-32l-47-82q-14-23-8-49t27-43l53-40q-1-7-1-13.5v-27q0-6.5 1-13.5l-53-40q-21-17-27-43t8-49l47-82q14-23 39-32t50 2l62 26q11-8 23-15t24-12l9-66q4-26 23.5-44t46.5-18h94q27 0 46.5 18t23.5 44l9 66q13 5 24.5 12t22.5 15l62-26q25-11 50-2t39 32l47 82q14 23 8 49t-27 43l-53 40q1 7 1 13.5v27q0 6.5-2 13.5l53 40q21 17 27 43t-8 49l-48 82q-14 23-39 32t-50-2l-60-26q-11 8-23 15t-24 12l-9 66q-4 26-23.5 44T527-80h-94Zm49-260q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Z"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn sidebar-logout-btn" data-bs-toggle="modal" data-bs-target="#logout-modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-tabs-footer-icon" viewBox="0 -960 960 960">
+                                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240q17 0 28.5 11.5T480-800q0 17-11.5 28.5T440-760H200v560h240q17 0 28.5 11.5T480-160q0 17-11.5 28.5T440-120H200Zm487-320H400q-17 0-28.5-11.5T360-480q0-17 11.5-28.5T400-520h287l-75-75q-11-11-11-27t11-28q11-12 28-12.5t29 11.5l143 143q12 12 12 28t-12 28L669-309q-12 12-28.5 11.5T612-310q-11-12-10.5-28.5T613-366l74-74Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HEADER -->
+            <div class="header-wrapper" id="header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <button class="header-sidebar-left-btn header-hamburger-btn" type="button" id="toggle-sidebar-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="header-sidebar-left-btn-icon header-hamburger-icon" viewBox="0 -960 960 960">
+                                <path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/>
+                            </svg>
+                        </button>
+                        <div class="header-hero-wrapper">
+                            <span class="header-hero font-poppins-bold">QM</span>
+                        </div>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="dropdown">
+                            <button type="button" class="header-create-join-button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-create-join-button-icon" viewBox="0 -960 960 960">>
+                                    <path d="M440-440v120q0 17 11.5 28.5T480-280q17 0 28.5-11.5T520-320v-120h120q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520H520v-120q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640v120H320q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440h120ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="dropdown-menu">
+                                <div class="header-create-join-menu">
+                                    <button type="button" class="header-create-join-menu-btn font-poppins-regular" data-bs-toggle="modal" data-bs-target="#create-subject-modal">
+                                        Create Subject
+                                    </button>
+                                    <button type="button" class="header-create-join-menu-btn font-poppins-regular" data-bs-toggle="modal" data-bs-target="#join-subject-modal">
+                                        Join Subject
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="header-sidebar-right-btn header-hamburger-btn" data-bs-toggle="offcanvas" data-bs-target="#responsive-sidebar" aria-controls="offcanvasRight">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="header-sidebar-right-btn-icon header-hamburger-icon" viewBox="0 -960 960 960">
+                                <path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main -->
+            <div class="main-wrapper" id="main">
+                <div class="main-content">
+                    <div class="tab-content" id="main-tabs">
+                        <div class="tab-pane fade show active" id="main-subjects" role="tabpanel" aria-labelledby="main-subjects">
+                            <div class="main-subjects-wrapper">
+                                <div class="main-subjects-no-item-wrapper">
+                                    <span class="main-subjects-no-item-text font-inria-sans-bold">IT SEEMS YOU DON'T HAVE ANY EXISTING SUBJECTS.</span>
+                                    <span class="main-subjects-no-item-text font-inria-sans-bold">CLICK
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="header-create-join-button-icon" viewBox="0 -960 960 960">>
+                                            <path d="M440-440v120q0 17 11.5 28.5T480-280q17 0 28.5-11.5T520-320v-120h120q17 0 28.5-11.5T680-480q0-17-11.5-28.5T640-520H520v-120q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640v120H320q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440h120ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/>
+                                        </svg> TO CREATE OR JOIN ONE.
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- SMALL SCREEN | SIDEBAR -->
+    <div class="offcanvas offcanvas-end" id="responsive-sidebar" aria-labelledby="Responsive Sidebar">
+        <div class="offcanvas-header responsive-sidebar-header">
+            <div class="responsive-sidebar-header-content" data-bs-dismiss="offcanvas">
+                <div class="responsive-sidebar-close-icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="responsive-sidebar-close-icon" viewBox="0 -960 960 960">
+                        <path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"/>
+                    </svg>
+                </div>
+                <div class="responsive-sidebar-profile-wrapper">
+                    <div class="responsive-sidebar-profile-picture-image-wrapper">
+                        <img src="" alt="profile-picture" class="responsive-sidebar-profile-picture-user-image" id="responsive-profile-picture" >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-sidebar-profile-picture-placeholder" viewBox="0 -960 960 960">
+                            <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Z"/>
+                        </svg>
+                    </div>
+                    <div class="responsive-sidebar-profile-details">
+                        <span class="responsive-sidebar-profile-name font-rubik-medium" id="name"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="responsive-sidebar-divider">
+            <hr>
+        </div>
+
+        <div class="offcanvas-body responsive-sidebar-body">
+            <div class="nav nav-pills" id="responsive-sidebar-tabs" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active font-rubik-medium" id="responsive-sidebar-subjects" data-bs-toggle="pill" data-bs-target="#main-subjects" type="button" role="tab" aria-controls="sidebar-subjects" aria-selected="true">Subjects</button>
+                <button class="nav-link font-rubik-medium" id="responsive-sidebar-profile" data-bs-toggle="pill" data-bs-target="#main-profile" type="button" role="tab" aria-controls="sidebar-profile" aria-selected="false">Profile</button>
+                <button type="button" class="btn responsive-sidebar-settings-btn" data-bs-toggle="modal" data-bs-target="#settings-modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="responsive-sidebar-tabs-footer-icon" viewBox="0 -960 960 960">
+                        <path d="M433-80q-27 0-46.5-18T363-142l-9-66q-13-5-24.5-12T307-235l-62 26q-25 11-50 2t-39-32l-47-82q-14-23-8-49t27-43l53-40q-1-7-1-13.5v-27q0-6.5 1-13.5l-53-40q-21-17-27-43t8-49l47-82q14-23 39-32t50 2l62 26q11-8 23-15t24-12l9-66q4-26 23.5-44t46.5-18h94q27 0 46.5 18t23.5 44l9 66q13 5 24.5 12t22.5 15l62-26q25-11 50-2t39 32l47 82q14 23 8 49t-27 43l-53 40q1 7 1 13.5v27q0 6.5-2 13.5l53 40q21 17 27 43t-8 49l-48 82q-14 23-39 32t-50-2l-60-26q-11 8-23 15t-24 12l-9 66q-4 26-23.5 44T527-80h-94Zm49-260q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Z"/>
+                    </svg>
+                </button>
+                <button type="button" class="btn responsive-sidebar-logout-btn" data-bs-toggle="modal" data-bs-target="#logout-modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="responsive-sidebar-tabs-footer-icon" viewBox="0 -960 960 960">
+                        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240q17 0 28.5 11.5T480-800q0 17-11.5 28.5T440-760H200v560h240q17 0 28.5 11.5T480-160q0 17-11.5 28.5T440-120H200Zm487-320H400q-17 0-28.5-11.5T360-480q0-17 11.5-28.5T400-520h287l-75-75q-11-11-11-27t11-28q11-12 28-12.5t29 11.5l143 143q12 12 12 28t-12 28L669-309q-12 12-28.5 11.5T612-310q-11-12-10.5-28.5T613-366l74-74Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Functions -->
+    <script src="/source/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/source/js/inputPreventE.js"></script>
+    <script src="/source/js/clearModalFIelds.js"></script>
+    <script src="/source/js/toggleSidebar.js"></script>
+    <script src="/source/js/profilePicture.js"></script>
+    <script src="/source/js/checkSubjectCards.js"></script>
+    <script src="/source/js/editProfile.js"></script>
+    <script src="/source/js/sidebarProfileCenter.js"></script>
+    <script src="/source/js/syncSidebar.js"></script>
+    <script src="/source/js/stickyBackground.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+.font-rubik {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* 3, 4, 5, 6, 7, 8, 9, x 100 */
+    font-style: normal;
+}
+
+.font-rubik-medium {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; /* 3, 4, 5, 6, 7, 8, 9, x 100 */
+    font-style: normal;
+}
+
+.font-pacifico {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-pt-sans-regular {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-pt-sans-bold {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-pt-sans-regular-italic {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-pt-sans-bold-italic {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.font-poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.font-poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.font-poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.font-poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.font-poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.font-poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.font-poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.font-poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.font-poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.font-poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.font-poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.font-poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.font-poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.font-poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.font-poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.font-bungee-regular {
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-inria-sans-light {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.font-inria-sans-regular {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-inria-sans-bold {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-inria-sans-light-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.inria-sans-regular-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.font-inria-sans-bold-italic {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}

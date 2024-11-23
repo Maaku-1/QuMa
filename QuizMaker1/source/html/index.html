@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/source/css/bsf-index.css">
+    <link rel="stylesheet" href="/source/css/index.css">
+    <link rel="stylesheet" href="/source/css/fonts.css">
+    <link rel="stylesheet" href="/source/css/loading-spinner.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>QuMa</title>
+</head>
+<body>
+    <!-- Wrapper -->
+    <div class="wrapper" id="content">
+        <div class="left">
+            <div class="header">
+                <span class="logo font-pacifico">quiz maker</span>
+            </div>
+
+            <!-- Main -->
+            <div class="main">
+                <div class="hero">
+                    <span class="material-symbols-rounded hero-icon">key</span>
+                    <span class="hero-text font-poppins-bold">Login to your <span>DHVSU</span> Account</span>
+                </div>
+                <form action="/source/html/admin-subject-view.html" class="login-form">
+                    <div class="form-floating">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" placeholder="School ID" maxlength="25" class="form-control font-rubik" id="sch-id" required>
+                        <label class="font-rubik" for="sch-id">School ID</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" placeholder="Password" maxlength="25" class="form-control font-rubik" id="pw" required>
+                        <label class="font-rubik" for="pw">Password</label>
+                        <span id="toggle-password" class="material-symbols-rounded show-pw">visibility</span>
+                    </div>
+                    <div class="form-check rm">
+                        <input class="form-check-input" type="checkbox" value="" id="rm" checked>
+                        <label class="form-check-label font-rubik" for="rm">Remember Me</label>
+                    </div>  
+                    <button type="submit" class="btn btn-primary font-rubik login">LOGIN</button>
+                </form>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <span class="footer-text font-pt-sans-regular-italic">CAPSTONE PROJECT BY GROUP 2</span>
+            </div>
+        </div>
+
+        <!-- DHVSU Background -->
+        <div class="right">
+            <div class="background"></div>
+        </div>
+    </div>
+
+    <!-- JS Functions -->
+    <script src="/source/bootstrap/dist/js/bootstrap.js" crossorigin="anonymous"></script>
+    <script src="/source/js/showPass.js" crossorigin="anonymous"></script>
+    <script src="/source/js/loadingSpinner.js" crossorigin="anonymous"></script>
+</body>
+</html>
